@@ -17,9 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch my private sprites
+        uses: actions/checkout@v4
+        with:
+          repository: hfsansotero/My-sprites
+          token: ${{ secrets.SPRITES_TOKEN }}
+          path: private
       - uses: hfsansotero/git-tracker@main
         with:
-          animal: fox # a built-in animal (fox) or an animal folder in this repository
+          animal: private/dragon # from hfsansotero/My-sprites (private)
           growth: month # size from my last 30 days
           mood: week # animation from my last finished week
       - name: Commit the GIF if it changed
