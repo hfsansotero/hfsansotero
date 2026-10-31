@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hfsansotero/git-tracker@dev # switch to @main once git-tracker has a main branch
+      - uses: hfsansotero/git-tracker@main
         with:
           animal: fox # a built-in animal (fox) or an animal folder in this repository
       - name: Commit the GIF if it changed
