@@ -25,7 +25,7 @@ jobs:
           path: private
       - uses: hfsansotero/git-tracker@main
         with:
-          animal: private/dragon # from hfsansotero/My-sprites (private)
+          animal: private/robot # from hfsansotero/My-sprites (private)
           growth: month # size from my last 30 days
           mood: week # animation from my last finished week
       - name: Commit the GIF if it changed
