@@ -27,16 +27,11 @@ jobs:
         run: |
           mkdir -p gifs
           cp private/gifs/ascii-starry-swirl/ascii-starry-swirl.gif gifs/
-      - uses: hfsansotero/git-tracker@main
-        with:
-          animal: private/robot2 # from hfsansotero/My-sprites (private)
-          growth: month # size from my last 30 days
-          mood: week # animation from my last finished week
-      - name: Commit the GIFs if they changed
+      - name: Commit the banner if it changed
         run: |
-          git add tracker gifs
+          git add gifs
           git diff --cached --quiet && exit 0
           git -c user.name="github-actions[bot]" \
               -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit -m "Update git-tracker"
+              commit -m "Update banner"
           git push
