@@ -23,14 +23,18 @@ jobs:
           repository: hfsansotero/My-sprites
           token: ${{ secrets.SPRITES_TOKEN }}
           path: private
+      - name: Copy my banner
+        run: |
+          mkdir -p gifs
+          cp private/gifs/ascii-starry-swirl/ascii-starry-swirl.gif gifs/
       - uses: hfsansotero/git-tracker@main
         with:
           animal: private/robot2 # from hfsansotero/My-sprites (private)
           growth: month # size from my last 30 days
           mood: week # animation from my last finished week
-      - name: Commit the GIF if it changed
+      - name: Commit the GIFs if they changed
         run: |
-          git add tracker
+          git add tracker gifs
           git diff --cached --quiet && exit 0
           git -c user.name="github-actions[bot]" \
               -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
