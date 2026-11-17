@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p gifs
           rm -f gifs/*.gif
-          cp private/gifs/ascii-starry-wave/ascii-starry-wave.gif gifs/
+          cp private/gifs/ascii-skull/ascii-skull.gif gifs/
       - name: Commit the banner if it changed
         run: |
           git add gifs
